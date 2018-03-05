@@ -44,6 +44,7 @@ function sumar() {
 
 
 // Verificar la edad y si es chico o chica
+//opción 1
 
 function entrada(){
 	//Declarar variables para la edad 
@@ -64,4 +65,27 @@ function entrada(){
 			alert("Lárgate de aqúi, niñata");
 		}
 	}
+}
+
+//opcion 2
+
+function entrada2() {
+
+	var edad = document.getElementById('edad').value;
+	var genero = document.getElementById('genero').value;
+
+	if (edad>= 18){
+		if (genero == "chico"){
+			alert("Puedes pasar, chico");
+		}
+		else if (genero == "chica") {
+			alert("Puedes pasar, chica");
+		}
+		else{
+			alert("Puedes pasar, cosa");
+		}
+	}else{
+			alert("Puedes pasar");
+	}
+
 }
