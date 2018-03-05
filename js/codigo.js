@@ -89,3 +89,19 @@ function entrada2() {
 	}
 
 }
+
+//Opcion 3
+
+function entrada3() {
+
+	var edad = document.getElementById('edad').value;
+	var genero = document.getElementById('genero').value;
+
+	if ((edad>= 18) && ((genero=="chico") || (genero=="chica"))){
+		alert("Puedes Pasar" +genero);
+	}
+	else{
+		alert( "No puedes Pasar, " +genero);
+	}
+
+}
