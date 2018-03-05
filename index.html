@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>JAvascript</title>
+	<link rel="stylesheet" href="estilos.css">
+	<style>
+	
+	</style>
+	<!-- opcion recomendada -->
+	<script src="js/codigo.js"></script>	
+</head>
+<body>
+<!-- NO SE PUEDEN REPETIR LOS ID!!!!! -->
+
+	<div class="bloque">
+	<input type="text" id="val1"><br>
+	<input type="text" id="val2">
+	<button onclick="sumar()" text="Ejecutar">Resultado</button> 
+	</div>
+	
+
+	<div class="bloque2">
+	<input type="text" id="val3" ><br>
+	<input type="text" id="val4" >
+	<button onclick="parOImpar()" text="Ejecutar">¿Par o Impar?</button> 
+	</div>
+
+<!-- Práctica >18 chico y chica -->
+
+	<div class="bloque2">
+	<label for="edad"> Edad </label>
+	<input type="text" id="edad" placeholder="introduce tu edad..."><br>
+	<!-- para crear una función en Javascript con la etiqueta <select>, el id se lo tenemos que colocar en <select> 
+	y estipular la <option> en la función posterior descrita en el value=""-->
+	<select name="genero" id="genero">
+		<option value="chico" >Chico</option>
+		<option value="chica" >Chica</option>
+	</select>
+	<button onclick="entrada()" text="Ejecutar">Puedes Continuar</button> 
+	</div>
+
+</body>
+</html>
