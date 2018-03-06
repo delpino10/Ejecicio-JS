@@ -5,7 +5,15 @@
 	<title>JAvascript</title>
 	<link rel="stylesheet" href="estilos.css">
 	<style>
-	
+		.switch{
+			display: inline-block;
+			margin-top: 50px;
+		}
+		
+		.whileFor{
+			display: inline-block;
+			margin-top: 50px;
+		}
 	</style>
 	<!-- opcion recomendada -->
 	<script src="js/codigo.js"></script>	
@@ -40,5 +48,27 @@
 	<button onclick="entrada3()" text="Ejecutar">Puedes Continuar</button> 
 	</div>
 
+<!-- Practica switch -->	
+	<div class="switch">
+		<label for="op1">Oper1</label>
+		<input type="text" id="op1">
+		<label for="op2">Oper2</label>
+		<input type="text" id="op2">
+		<select name="" id="operacion">
+			<option value="1">Sumar</option>
+			<option value="2">Restar</option>
+			<option value="3">Multiplicar</option>
+			<option value="4">Dividir</option>
+		</select>
+		<button onclick="operaciones()">Vamos</button>
+		<label for="resultado">Resultado</label>
+		<input type="text" id="resultado">
+	</div>
+
+	<div class="whileFor">
+		<label for="contador">Contador</label> 
+		<input type="text" id="contador"> 
+		<button onclick="prac_whileFor2()">Contador</button>
+	</div>	
 </body>
 </html>

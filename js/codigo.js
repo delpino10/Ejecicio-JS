@@ -43,7 +43,10 @@ function sumar() {
 }
 
 
-// Verificar la edad y si es chico o chica
+/*=====================================
+Verificar la edad y si es chico o chica
+=====================================*/
+
 //opción 1
 
 function entrada(){
@@ -104,4 +107,129 @@ function entrada3() {
 		alert( "No puedes Pasar, " +genero);
 	}
 
+}
+
+/*=====================================
+switch 
+==============================*/
+
+
+function operaciones() {
+	// Datos introducidos por el usuario
+	var op1 = document.getElementById("op1").value;
+	var op2 = document.getElementById("op2").value;
+	var operacion = document.getElementById("operacion").value;
+
+	//variable paraa tercera opcion
+	// var textoResultado = document.getElementById("resultado");
+
+	op1 = parseInt(op1);
+	op2 = parseInt(op2);
+
+	//se iguala a cero porque es recomendable darle un valor. Si fuese texto, habría que igualarle a ="";
+	var resultado=0;
+ 
+	switch (operacion){
+	case "1":
+	// Suma
+	// resultado=op1+op2; //Primera opcion
+	// alert( "La suma es:" +(op1+op2)); //Segunda opcion
+	document.getElementById("resultado").value=op1+op2;	//Tercera opcion
+
+	break;
+
+	case "2":
+	//resta
+	// resultado=op1-op2;
+	// alert( "La suma es:" +(op1-op2));
+	document.getElementById("resultado").value=op1-op2;
+	break;
+
+	case "3":
+	//multiplicar
+	// resultado=op1*op2;
+	// alert( "La suma es:" +(op1*op2));
+	document.getElementById("resultado").value=op1*op2;
+	break;
+
+	case "4":
+	//division
+	// resultado=op1/op2;
+	// alert( "La suma es:" +(op1/op2));
+	document.getElementById("resultado").value=op1/op2;
+	break;
+	}
+}
+
+
+
+/*=====================================
+While 
+==============================*/
+
+// Contador hacia atrás en ventana emergente
+
+function repetir(){
+	// al apretar el botón comienza la cuenta atrás 
+	var contador = 5;
+	while (contador > 0){
+		alert("El contador es:" +contador);
+		contador= contador-1;
+	}
+	alert("Fin");
+}
+
+
+//Misma función que arriba, pero con var = i
+
+function repetir_i(){
+	var i=5;
+	while (i > 0){
+		alert("El contador es:" +i);
+		i--;
+	}
+	alert("Fin");
+}
+
+/*=====================================
+For 
+==============================*/
+
+function repetir_for() {
+	var contador = 5;
+	for(contador = 5; contador > 0; contador=contador-1){
+		alert("El contador es:" +contador);
+	}
+	alert("Fin")
+}
+
+/*=====================================
+Practica while/for
+==============================*/
+
+function prac_whileFor() {
+
+	var contador = document.getElementById("contador").value;
+	//document.getElementById("contador").value es el input donde el usuario ha insertado el dato
+	for (var i=contador;i>0;i--){
+		//la variable "contador" se ha convertido en i
+		//"i>0" significa que es una cuanta atrás. Desde el número que ha insertado el usuario hasta cero
+		alert("El contador es:" +i); 
+	}
+	alert("Fin");
+}
+
+//Cuanta atrás inversa
+
+function prac_whileFor2() {
+
+	var contador = document.getElementById("contador").value;
+	//document.getElementById("contador").value es el input donde el usuario ha insertado el dato
+	for (var i=0;i<contador;i++){
+		//"var i=0" significa el valor inicial desde donde comienza la cuenta hacia delante
+		//i<contador significa que es una cuanta hacia delante. Desde cero hasta el numero que ha insertado el usuario 
+		//i++ significa que suma por cada click que de el usuario
+		alert("El contador es:" +i); 
+	}
+	alert("Fin");
 }
