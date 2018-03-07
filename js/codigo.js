@@ -207,21 +207,55 @@ function repetir_for() {
 Practica while/for
 ==============================*/
 
-function prac_whileFor() {
+/*Cuenta descendente*/
+
+//Con while
+
+function prac_whileDescendente(){
+
+	var contador= document.getElementById("contador").value;
+	var i = contador;
+	while(i>0){
+			alert('El contador es' +i);
+			i--;
+	}
+	alert('Fin');
+}
+
+// Con for
+
+function prac_ForDecendente() {
 
 	var contador = document.getElementById("contador").value;
 	//document.getElementById("contador").value es el input donde el usuario ha insertado el dato
 	for (var i=contador;i>0;i--){
 		//la variable "contador" se ha convertido en i
-		//"i>0" significa que es una cuanta atrás. Desde el número que ha insertado el usuario hasta cero
+		/*"i>0"  Es la condición que se tiene que cumplir para que siga el proceso. 
+		Mientras var i=contador sea mayor que cero, el proceso sigue produciendose*/
 		alert("El contador es:" +i); 
 	}
 	alert("Fin");
 }
 
-//Cuanta atrás inversa
+//Cuanta ascendente
 
-function prac_whileFor2() {
+//Con while. No funciona!!!
+
+function prac_whileAscendente() {
+
+	var contador = document.getElementById('contador');
+	var i = contador;
+
+	while(i<0){
+		alert('El contador es:' +i);
+		i++;
+	}
+	alert('Fin');
+}
+
+// Con for
+
+function prac_ForAscendente() {
 
 	var contador = document.getElementById("contador").value;
 	//document.getElementById("contador").value es el input donde el usuario ha insertado el dato
@@ -232,4 +266,41 @@ function prac_whileFor2() {
 		alert("El contador es:" +i); 
 	}
 	alert("Fin");
+}
+
+
+
+/*=====================================
+Array
+==============================*/
+
+//obtener el maximo valor de un array
+
+function maxValorDeArray() {
+
+	var miarray = []; //crea un array nuevo, posiciones predefinidas.
+	var miarray = [20,25,40,80,5,60,90,3,76,13];
+
+	var max = miarray[0]; //declaras una variable con la posición inicial de mayor valor del array 
+
+	for (var i = 1; i < miarray.length; i++) //"i=1" y no "i=0" porque ya has cogido el 0 al declarar la variable "max"
+		if (miarray[i]>max){ 
+			max=miarray[i];
+		}
+		alert('mayor: ' +max);	//este elemento se muestra fuera del if. Si no el alert salta para cada paso que da el "for".
+
+}
+
+//obtener la media de un array
+
+function MediaDeUnArray(){
+
+	var miarray = [20,25,40,80,5,60,90,3,76,13];
+	var suma = 0;
+
+	for (var i = 0; i < miarray.length; i++) {
+	var suma = suma + miarray[i];
+	}
+	var media = suma/miarray.length;
+	alert('la media:' +media);
 }
