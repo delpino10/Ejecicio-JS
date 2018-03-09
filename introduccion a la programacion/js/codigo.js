@@ -120,7 +120,7 @@ function operaciones() {
 	var op2 = document.getElementById("op2").value;
 	var operacion = document.getElementById("operacion").value;
 
-	//variable paraa tercera opcion
+	//variable para tercera opcion
 	// var textoResultado = document.getElementById("resultado");
 
 	op1 = parseInt(op1);

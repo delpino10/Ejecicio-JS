@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Conversor Moneda</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/conversorMoneda.js"></script>
+</head>
+<body>
+	<h2>Divisas</h2>
+
+
+	<div class="cantidadInicial">
+		<label for="cantidadInicial"> cantidad Inicial</label>
+		<input type="text" value="cantidadInicial" id="cantidadInicial" placeholder="cantidadInicial">
+
+		<label for="select"></label>
+		<select name="select" id="divisaInicial">
+			<option value="euro">Euro</option>
+			<option value="dolar">Dólar</option>
+			<option value="bitcoin">bitcoin</option>
+			<option value="libra">libra</option>
+			<option value="dirham">dirham</option>
+		</select>
+		</div>
+
+	<div class="total">
+		<label for="total"> cantidad convertida</label>
+		<input type="text" value="total" id="total" placeholder="total">
+
+		<label for="select"></label>
+		<select name="select" id="divisaFinal">
+			<option value="euro">Euro</option>
+			<option value="dolar">Dólar</option>
+			<option value="bitcoin">bitcoin</option>
+			<option value="libra">libra</option>
+			<option value="dirham">dirham</option>
+		</select>
+	</div>
+
+
+	<button onclick="convertirDivisas()">Convertir</button>
+
+	
+</body>
+</html>
