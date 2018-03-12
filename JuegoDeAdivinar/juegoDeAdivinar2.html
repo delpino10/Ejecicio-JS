@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/juegoDeAdivinar.js"></script>
+	<style>
+		.pulsador {padding:15px; 
+			width: auto; 
+			display: inline-block; 
+			margin: 25px;
+			cursor: pointer; 
+			color: yellow; 
+			border-radius: 40px; 
+			background: purple;}
+		.caja{border: solid 2px blue; float: left;}
+	</style>
+</head>
+<body>
+		<div class="caja">
+			<h3>EJERCICIO 1</h3>
+			Crea un script que genere un número aleatorio entre 1 y 100. A continuación debe pedir al usuario que adivine el número. 
+			Si el usuario responde un número menor al número aleatorio, debe mostrarse un mensaje “El número es mayor. Inténtelo de nuevo” 
+			y dar opción a responder de nuevo. Si el usuario responde un número mayor debe mostrarse un mensaje “El número es menor. Inténtelo 
+			de nuevo”. Si el usuario acierta debe mostrarse “Enhorabuena. Ha acertado”. El programa debe terminar si el usuario acierta o si se
+			superan los 30 intentos sin acertar. En caso de superarse los 30 intentos debe mostrarse el mensaje “Ha superado 30 intentos. El programa termina”.</br>
+			<div class="pulsador" onclick="adivinaAleatorio()">Comenzar Ejercicio 1</div>
+			<div class="pulsador" id="contador">00</div>
+			<div class="pulsador" id="resultado">00</div>
+		</div>
+	
+</body>
+</html>

@@ -8,9 +8,6 @@ var divF = document.getElementById('divisaFinal').value;
 var euro;
 var euroConvertido;
 
-var dolar;
-var dolarConvertido;
-
 
 /*===========
 EURO 
@@ -39,6 +36,9 @@ switch(divI){ //switch (id de <select>)
 
 	case 'euro':
 		euro=cantI;
+
+	default:
+		alert('No has seleccionado moneda');
 }
 
 switch(divF){ //switch (id de <select>)
