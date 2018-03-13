@@ -3,11 +3,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ParesNones</title>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<style>
 		
 
 	body{
-		background: #EE9A17;/*Orange Papaya*/
+		padding: 0;
+		margin:0; 
+		box-sizing: border-box;
+		background: #EE9A17; /*Orange Papaya*/
+
+	}
+
+	.contenedor{
+		width:1600px;
+		margin:auto;
+		background: url(img/bg.png);
+	}
+
+	.main{
+		width: 41%;
+		margin:auto;
+	}
+
+	#btn{
+		width: 200px;
+		height:40px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		border: 1px solid whitesmoke;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		border-radius: 3px;
+		font-family: Oswald, sans-serif;
+		font-size: 17px;
+		letter-spacing: 3px;
+		color: #2d2d2d;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	#btn::before{
+		content:'';
+		height: 45px;
+		width: 0px; /*Poner a cero para que la forma aparezca en el hover*/
+		background-color: whitesmoke;
+		position: absolute; /*propiedad agregada para que aparezca la forma*/
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%) skewX(-25deg);
+		z-index: -1;
+		transition: all .6s;
+	}
+
+	#btn:hover:before{
+		width: 240px;
 	}
 
 
@@ -72,25 +125,30 @@
 	</script>
 </head>
 <body>
-	<h1>Pares o Nones</h1>
-
-	<select name="" id="paresNones">
-		<option value="pares">pares</option>
-		<option value="nones">nones</option>
-	</select>
-
-	<select name="" id="opcU">
-		<option value=1>1</option>
-		<option value=2>2</option>
-		<option value=3>3</option>
-		<option value=4>4</option>
-		<option value=5>5</option>
-	</select>
-	<label for="maquina"><input type="text" id="maquina" placeholder="maquina"></label>
-	<input type="text" id="suma">
-	<input type="text" id="MarcadorU">
-	<input type="text" id="MarcadorM">
-	<button onclick="paresNones();"> Pares o Nones</button>
+	<div class="contenedor">
+		<div class="main">
+			<h1>Pares o Nones</h1>
+			
+				<select name="" id="paresNones">
+					<option value="pares">pares</option>
+					<option value="nones">nones</option>
+				</select>
+			
+				<select name="" id="opcU">
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+				</select>
+				<label for="maquina"><input type="text" id="maquina" placeholder="maquina"></label>
+				<input type="text" id="suma">
+				<input type="text" id="MarcadorU">
+				<input type="text" id="MarcadorM">
+				<button onclick="paresNones();" id="btn"> PARES O NONES</button>
+		</div>
+		<!-- <button id="btn">ANIMATE</button> -->
+	</div>
 </body>
 </html>
 
