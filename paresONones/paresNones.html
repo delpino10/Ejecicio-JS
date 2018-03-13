@@ -3,17 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ParesNones</title>
+	<style>
+		
+
+	body{
+		background: #EE9A17;/*Orange Papaya*/
+	}
+
+
+	</style>
+
+
+
 	<script>
 		
 		var MarcadorU = 0;	
 		var MarcadorM = 0;
 
 		function paresNones(){
-			var opcM = Math.floor(Math.random()*5);
+			var opcM = (Math.floor(Math.random()*5)+1);
 			var opcU = document.getElementById('opcU').value;
 			var paresNones = document.getElementById('paresNones').value;
-
-			var suma = Math.floor(opcU) + Math.floor(opcM);
+				document.getElementById('maquina').value = opcM;
+			var suma = parseInt(opcU) + parseInt(opcM);
 			//Math.floor => rounds to the nearest whole number; 4.8 = 5;
 			//ParseInt => redondea a la parte entera; 4.8 = 4;
 
@@ -74,9 +86,11 @@
 		<option value=4>4</option>
 		<option value=5>5</option>
 	</select>
+	<label for="maquina"><input type="text" id="maquina" placeholder="maquina"></label>
 	<input type="text" id="suma">
 	<input type="text" id="MarcadorU">
 	<input type="text" id="MarcadorM">
 	<button onclick="paresNones();"> Pares o Nones</button>
 </body>
 </html>
+
