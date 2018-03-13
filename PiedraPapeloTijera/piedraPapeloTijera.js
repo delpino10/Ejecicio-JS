@@ -1,22 +1,23 @@
 function juego() {
 	// body...
+	
+//Se ponen fuera de la función para que vuelvan a 0 cada vez se repita la funcion
+var contadorDeHombre = 0; //contador que asigna puntos para que gane el hombre. 
 
-var contadorDeHombre = 0;
-
-var contadorDeMaquina = 0;
+var contadorDeMaquina = 0;	//contador que asigna puntos para que gane la máquina
 
 
 while (contadorDeMaquina<2 && contadorDeHombre<2) {
 
 	var opcion_usuario = 0;
 
-	var ordenadorElige = parseInt(Math.random()*3);
+	var ordenadorElige = parseInt(Math.random()*3); //ParseInt añadido para que devuelva números enteros
 
 		alert("Ordenador elige: "+ordenadorElige);
 
 	var usuarioElige = prompt('¿Piedra, Papel o Tijera');
 
-	switch(usuarioElige)
+	switch(usuarioElige) //Se determinan que valor se van asociar a "Piedra, "Papel O "Tijera"
 	{
 
 	    case "Piedra": opcion_usuario=0; break;
@@ -26,7 +27,6 @@ while (contadorDeMaquina<2 && contadorDeHombre<2) {
 	    case "Tijera": opcion_usuario=2; break;
 
 	    default: alert ("Opcion Incorrecta, piedra, papel, tijeras");
-
 
 	}
 
@@ -38,18 +38,18 @@ while (contadorDeMaquina<2 && contadorDeHombre<2) {
 		switch(ordenadorElige) //Compara opcion de usuario con opcion elegida por la maquina
 		{
 
-		    case 0: if (usuarioElige==1) {contadorDeHombre++; //Piedra
+			case 0: if (usuarioElige==1) {contadorDeHombre++; /*case 0: => Piedra*/
 		            }else {
 		            contadorDeMaquina++;}
 		            break;
 
-		    case 1: if(usuarioElige==0){contadorDeMaquina++; //Papel
+		    case 1: if(usuarioElige==0){contadorDeMaquina++; //Case 1: => Papel
 		    		} 
 		    		else {contadorDeHombre++;
 		    		}
 		     		break;
 
-		    case 2: if (usuarioElige==0) {contadorDeMaquina++; //Tijeras
+		    case 2: if (usuarioElige==0) {contadorDeMaquina++; //Case 2: => Tijeras
 		   			}
 		   			else {contadorDeHombre++;
 		   			}	
