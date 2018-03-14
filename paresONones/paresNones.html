@@ -4,17 +4,35 @@
 	<meta charset="UTF-8">
 	<title>ParesNones</title>
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
+
+	:root {
+    --main-bg-color: #EE9A17; 
+	}
 		
 
 	body{
 		padding: 0;
 		margin:0; 
 		box-sizing: border-box;
-		background: #EE9A17 url(img/bg.png) no-repeat center fixed; /*Orange Papaya*/
+		background: var(--main-bg-color); /*url(img/bg.png) no-repeat center fixed;*/ /*Orange Papaya*/
 		/*background-size: contain;*/
+		font-family: oswald, sans-serif;
 
 	}
+
+	h1{
+		font-family: oswald, sans-serif;
+		letter-spacing: 3px;
+		text-align: center;
+	}
+
+	h3{
+		margin: 10px;
+	}
+
+	
 
 	.contenedor{
 		width:1600px;
@@ -34,10 +52,10 @@
 		border: none;
 		outline: none;
 		border: 1px solid whitesmoke;
-		position: absolute;
+		/*position: absolute;
 		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		left: 50%;*/
+		transform: translate(0%,0%);
 		border-radius: 3px;
 		font-family: Oswald, sans-serif;
 		font-size: 17px;
@@ -64,6 +82,168 @@
 		width: 240px;
 	}
 
+	.cont_btn_paresNones{
+		width: 57%;
+		margin: 50px auto;
+		position: relative;
+	}
+	
+	.cont_btn_paresNones button{
+		margin: 0 20px;
+	}
+
+	.btnParesNones{
+		width: 200px;
+		height:40px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		border: 1px solid whitesmoke;
+		/*position: absolute;*/
+		top: 50%;
+		left: 50%;
+		transform: translate(0%,0%);
+		border-radius: 3px;
+		font-family: Oswald, sans-serif;
+		font-size: 17px;
+		letter-spacing: 3px;
+		color: #2d2d2d;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	.btnParesNones::before{
+		content:'';
+		height: 45px;
+		width: 0px; /*Poner a cero para que la forma aparezca en el hover*/
+		background-color: whitesmoke;
+		position: absolute; /*propiedad agregada para que aparezca la forma*/
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%) skewX(-25deg);
+		z-index: -1;
+		transition: all .6s;
+	}
+
+	.btnParesNones:hover:before{
+		width: 240px;
+	}
+
+
+
+	.cont_btn_numero {
+		margin: 50px 0;
+		text-align: center;	}
+
+
+	.cont_btn_numero button{
+		margin: 0 5px;
+	}
+
+	.btnNumero{
+		width: 140px;
+		height:40px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		border: 1px solid whitesmoke;
+		/*position: absolute;*/
+		top: 50%;
+		left: 50%;
+		transform: translate(0%,0%);
+		border-radius: 3px;
+		font-family: Oswald, sans-serif;
+		font-size: 17px;
+		letter-spacing: 3px;
+		color: #2d2d2d;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	.btnNumero:before{
+		content:'';
+		height: 45px;
+		width: 0px; /*Poner a cero para que la forma aparezca en el hover*/
+		background-color: whitesmoke;
+		position: absolute; /*propiedad agregada para que aparezca la forma*/
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%) skewX(-25deg);
+		z-index: -1;
+		transition: all .6s;
+	}
+
+	.btnNumero:hover:before{
+		width: 240px;
+	}
+
+	.marcadores{
+		width: 99%;
+		margin: auto;
+		
+	}
+
+	.eleccion {
+		width: 49%;
+		float: left;
+		border-right:1px solid whitesmoke;
+	}
+
+	.marcador{
+		width: 45%;
+		
+		float: left;
+		padding: 0 20px;
+		
+	}
+
+	input {
+		background: transparent;
+		float: left;
+		border: 1px solid whitesmoke;
+		border-radius: 3px;
+	}
+
+	.eleccion input{
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.marcador input{
+		margin: 10px;
+		padding: 10px;
+	}
+
+	label{
+		letter-spacing: 1px;
+		display: inline-block;
+	}
+
+	.eleccion label{
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.marcador label{
+		margin: 10px;
+		padding: 10px;
+	}
+
+
+	@media screen and (min-width: 900px){
+
+	.contenedor{
+		width:850px;
+		margin:auto;
+	}
+	.main{
+		width: 100%;
+		margin:auto;
+		/*text-align: center;*/
+	}
+
+	}
+
 
 	</style>
 
@@ -73,18 +253,24 @@
 		
 		var MarcadorU = 0;	
 		var MarcadorM = 0;
+		var opcion;
 
-		function paresNones(){
+		function elegirOpcion(op) {
+			opcion = op;
+			alert("Has elegido " + opcion);
+		}
+
+		function paresNones(opcU){
 			var opcM = (Math.floor(Math.random()*5)+1);
-			var opcU = document.getElementById('opcU').value;
-			var paresNones = document.getElementById('paresNones').value;
-				document.getElementById('maquina').value = opcM;
+			/*var opcU = document.getElementById('opcU').value;*/
+			/*var paresNones = document.getElementById('paresNones').value;*/
+				
 			var suma = parseInt(opcU) + parseInt(opcM);
 			//Math.floor => rounds to the nearest whole number; 4.8 = 5;
 			//ParseInt => redondea a la parte entera; 4.8 = 4;
 
 			if (suma%2==0){
-				if (paresNones=="pares") {
+				if (opcion=="pares") {
 					alert(suma + " " + 'Pares! gana el usuario' );
 					MarcadorU++;
 				}else{
@@ -92,7 +278,7 @@
 					MarcadorM++;
 				}	
 			}else{
-				if (paresNones=="nones") {
+				if (opcion=="nones") {
 					alert(suma + " " +'Nones! gana el usuario' );
 					MarcadorU++;
 				}else{
@@ -102,10 +288,12 @@
 				}
 			}
 		
-
+		document.getElementById('maquina').value = opcM;
+		document.getElementById('usuario').value = opcU;
 		document.getElementById('MarcadorU').value = MarcadorU;
 		document.getElementById('MarcadorM').value = MarcadorM;
 		document.getElementById('suma').value = suma;
+		document.getElementById('paresNones').value = opcion;
 
 		if (MarcadorM == 3 || MarcadorU == 3) { 
 			if (MarcadorU == 3) {
@@ -127,10 +315,29 @@
 </head>
 <body>
 	<div class="contenedor">
+
+		<h1>Pares o Nones</h1>
+
+		<div class="cont_btn_paresNones" id="cont_btn_paresNones">
+			<button onclick="elegirOpcion('pares');" id="btnParesNones1" class="btnParesNones"> PARES </button>
+			<button onclick="elegirOpcion('nones');" id="btnParesNones2" class="btnParesNones"> NONES</button>
+		</div>
+
+		<div class="cont_btn_numero" id="cont_btn_numero">
+			<button onclick="paresNones(1);" id="btn1" class="btnNumero">I</button>
+			<button onclick="paresNones(2);" id="btn2" class="btnNumero">II</button>
+			<button onclick="paresNones(3);" id="btn3" class="btnNumero">III</button>
+			<button onclick="paresNones(4);" id="btn4" class="btnNumero">IV</button>
+			<button onclick="paresNones(5);" id="btn5" class="btnNumero">V</button>
+		</div>
+
+		<!-- <div class="pulsador">
+			<button onclick="paresNones();" id="btn"> ¿PARES O NONES?</button>
+		</div>
+		No hace falta este boton. la funcion comienza al elegir un numero	 -->
+
 		<div class="main">
-			<h1>Pares o Nones</h1>
-			
-				<select name="" id="paresNones">
+				<!-- <select name="" id="paresNones">
 					<option value="pares">pares</option>
 					<option value="nones">nones</option>
 				</select>
@@ -141,14 +348,48 @@
 					<option value=3>3</option>
 					<option value=4>4</option>
 					<option value=5>5</option>
-				</select>
-				<label for="maquina"><input type="text" id="maquina" placeholder="maquina"></label>
-				<input type="text" id="suma">
-				<input type="text" id="MarcadorU">
-				<input type="text" id="MarcadorM">
-				<button onclick="paresNones();" id="btn"> PARES O NONES</button>
+				</select> -->
+				
 		</div>
-		<!-- <button id="btn">ANIMATE</button> -->
+		<div class="marcadores">
+			<div class="eleccion">
+				<h3>Elección del usuario</h3>
+				<div>
+					<label for="paresNones">¿Pares O Nones?</label>
+					<input type="text" id="paresNones" ">
+				</div>
+
+				<div>
+					<label for="usuario">Elección del usuario</label>
+					<input type="text" id="usuario" ">
+				</div>
+
+				
+				<div>
+					<label for="maquina">Elección de la máquina</label>
+					<input type="text" id="maquina" ">
+				</div>
+
+				<div>
+					<label for="suma">Suma</label>
+					<input type="text" id="suma">
+				</div
+				>	
+			</div>
+			
+			<div class="marcador">
+				<h3>Marcador</h3>
+				<div>
+					<label for="MarcadorU">Usuario</label>
+					<input type="text" id="MarcadorU" ">
+				</div>
+
+				<div>
+					<label for="MarcadorM">Máquina</label>
+					<input type="text" id="MarcadorM">
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
