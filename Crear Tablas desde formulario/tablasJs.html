@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TablsJs</title>
+	<script src="tablasJs.js"></script>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+
+		table{
+			font-family: verdana, sans-serif;
+			border-collapse: collapse;
+			border: solid #5F4B8B 2px;
+
+			margin: 20px;
+			/*width:50%;
+			position: sticky;
+			top: 75px;
+			left: 75px;*/
+		}
+
+		#tabla td, #tabla th {
+		    border-bottom: 1px solid #cfcbd8;
+		    padding: 20px;
+		    text-align: left;
+		}
+
+		#tabla tr:nth-child(even){
+			background-color: #f2f2f2;
+		}
+
+		#tabla tr:hover{
+			background-color: #ddd;
+		}
+
+		#tabla th{
+			padding-top: 24px;
+		    padding-bottom: 24px;
+		    text-align: left;
+		    background-color: #5F4B8B;
+		    color: white;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	
+		<label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre">
+		<label for="edad">Edad:</label><input type="text" id="edad" name="edad">
+		<input type="button" value="enviar" onclick="guardar()">
+
+		<table id="tabla">
+			<tr>
+				<th>nombre</th>
+				<th>edad</th>
+			</tr>
+		</table>
+
+	
+
+</body>
+</html>
